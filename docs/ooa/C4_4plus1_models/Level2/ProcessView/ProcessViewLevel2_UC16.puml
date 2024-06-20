@@ -12,7 +12,7 @@ autonumber
 HTTP -> BE : POST /actuators/set-blindRoller
 activate BE
 
-BE --> HTTP : closeBlindRoller(actuatorValueDTO)
+BE --> HTTP : Json, status CREATED
 deactivate BE
 
 @endumll

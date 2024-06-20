@@ -6,13 +6,13 @@ autonumber
 participant " " as HTTP
 
 box "Server"
-participant Controller as "Controller"
-participant Service as "Service"
-participant Repository as "Repository"
+participant Controller as ":Controller"
+participant Service as ":Service"
+participant Repository as ":Repository"
 end box
 participant DataBase as " "
 
-HTTP -> Controller: GET {deviceID}
+HTTP o-> Controller: getActuatorsByDeviceID (strDeviceID)
 activate Controller
 
 Controller -> Service : getActuatorsByDeviceID(deviceID)
@@ -31,7 +31,7 @@ deactivate Repository
 Service --> Controller: listActuators
 deactivate Service
 
-Controller --> HTTP: JSON / Status 200
+Controller -->o HTTP: actuatorListDTO, status 200
 deactivate Controller
 
 

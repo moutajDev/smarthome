@@ -7,16 +7,16 @@ autonumber
 participant " " as User
 
 box "SmartHome"
-    participant "Controller" as CTRL
-    participant "Service" as SV
-    participant "Repository" as REPO
-    participant "Domain" as DOM
+    participant ":Controller" as CTRL
+    participant ":Service" as SV
+    participant ":Repository" as REPO
+    participant ":Domain" as DOM
 end box
     participant " " as BD
 
 
 
-User o-> CTRL : GET /devices?room_id={roomId}&device_type_id={Temperature}
+User o-> CTRL : listDevices (strRoomID, strDeviceType)
 
 activate CTRL
 
@@ -66,7 +66,7 @@ deactivate REPO
 SV --> CTRL : deviceList
 deactivate SV
 
-CTRL -->o User : Json/status 200
+CTRL -->o User :deviceListDTO, status 200
 deactivate CTRL
 
 

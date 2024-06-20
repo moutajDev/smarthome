@@ -3,10 +3,10 @@
 
 participant " " as User
 box "Power Consumption"
-participant Controller as "Controller"
-participant Service as "Service"
-participant Repository as "Repository"
-participant Domain as "Domain"
+participant Controller as ":Controller"
+participant Service as ":Service"
+participant Repository as ":Repository"
+participant Domain as ":Domain"
 end box
 
 participant DataBase as " "
@@ -15,7 +15,7 @@ participant DataBase as " "
 autonumber
 
 
-User o-> Controller: GET /logs/temperature-difference?outsideDeviceIDStr={outsideDeviceIDStr}&insideDeviceIDStr={insideDeviceIDStr}&initialTime={initialTime}&finalTime={finalTime}&timeDelta={timeDelta} (outsideDeviceDTO, insideDeviceDTO, initialTime, endTime, timeDelta)
+User o-> Controller: getMaxInstTempDiffBetweenDeviceAndOutside( outsideDeviceIDStr, insideDeviceIDStr, initialTime, endTime, timeDelta)
 
 activate Controller
 
@@ -92,7 +92,7 @@ activate Service
 Service --> Controller: maxInstTempDiff
 deactivate Service
 
-Controller -->o User: JSON, status 200
+Controller -->o User: temperatureDiff, status 200
 deactivate Controller
 
 

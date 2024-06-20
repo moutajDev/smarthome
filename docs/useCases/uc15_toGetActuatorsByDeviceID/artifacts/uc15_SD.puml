@@ -45,7 +45,7 @@ activate ActuatorAssembler
 ActuatorAssembler --> ActuatorController: actuatorListDTO
 deactivate ActuatorAssembler
 
-ActuatorController --> User: actuatorListDTO
+ActuatorController -->o User: actuatorListDTO
 deactivate ActuatorController
 
 

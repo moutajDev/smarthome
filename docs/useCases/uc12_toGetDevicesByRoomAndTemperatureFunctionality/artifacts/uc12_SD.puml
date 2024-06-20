@@ -31,7 +31,7 @@ Service --> Controller: temperatureDevicesDTOInRoom
 
 deactivate Service
 
-Controller --> User: temperatureDevicesDTOInRoom
+Controller -->o User: temperatureDevicesDTOInRoom
 
 deactivate Controller
 

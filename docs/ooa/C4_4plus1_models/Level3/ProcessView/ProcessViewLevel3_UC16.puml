@@ -6,18 +6,34 @@ autonumber
 participant " " as HTTP
 
 box "Server"
-    participant "Controller" as Controller
-    participant Service as Service
-    participant Repository as Repository
-    participant BlindRollerActuator as BlindRollerActuator
+    participant ":Controller" as Controller
+    participant Service as ":Service"
+    participant Repository as ":Repository"
+    participant BlindRollerActuator as ":BlindRollerActuator"
 
     end box
 
     participant DataBase as " "
 
 
-HTTP -> Controller: POST/set-blindRoller
+HTTP o-> Controller: setBlindRoller (actuatorValueEntryDTO)
 activate Controller
+
+Controller -> Service: getActuatorByID (actuatorID)
+activate Service
+
+Service -> Repository: getActuatorByID (actuatorID)
+activate Repository
+
+Repository ->o DataBase: findByID()
+
+DataBase o--> Repository: actuatorBlindRoller
+
+Repository --> Service: actuatorBlindRoller
+deactivate Repository
+
+Service --> Controller: actuatorBlindRoller
+deactivate Service
 
 Controller -> Service: getDeviceReadings (deviceID, sensorTypeID)
 activate Service
@@ -35,7 +51,7 @@ deactivate Repository
 Service --> Controller: deviceReadingsList
 deactivate Service
 
-Controller -> Service: setValue (actuatorBlindRoller, blindRollerValue, blindRollerCurrentValue)
+Controller -> Service: setValue (actuatorBlindRoller, blindRollerValue)
 activate Service
 
 Service -> BlindRollerActuator: setValue(blindRollerValue)
@@ -47,7 +63,9 @@ deactivate BlindRollerActuator
 Service --> Controller: blindRollerValue
 deactivate Service
 
-Controller --> HTTP: JSON / Status 201
+
+Controller -->o HTTP: actuatorDTO, status 201
+deactivate Controller
 
 
 @enduml

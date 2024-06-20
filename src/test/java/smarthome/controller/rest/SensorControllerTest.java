@@ -194,7 +194,9 @@ class SensorControllerTest {
     mockMvc.perform(post("/sensors")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(sensorDataDTO)))
-        .andExpect(status().isCreated());
+        .andExpect(status().isCreated())
+        .andExpect(jsonPath("$.sensorName", is(sensorName)))
+        .andExpect(jsonPath("$.sensorTypeID", is(sensorTypeIDStr)));
   }
 
 
@@ -241,7 +243,10 @@ class SensorControllerTest {
     mockMvc.perform(post("/sensors")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(sensorDataDTO)))
-        .andExpect(status().isCreated());
+        .andExpect(status().isCreated())
+        .andExpect(jsonPath("$.sensorName", is(sensorName)))
+        .andExpect(jsonPath("$.sensorTypeID", is(strSensorType)));
+
   }
 
   /**
@@ -289,7 +294,9 @@ class SensorControllerTest {
     mockMvc.perform(post("/sensors")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(sensorDataDTO)))
-        .andExpect(status().isCreated());
+        .andExpect(status().isCreated())
+        .andExpect(jsonPath("$.sensorName", is(sensorName)))
+        .andExpect(jsonPath("$.sensorTypeID", is(strSensorType)));
   }
 
   @Test
@@ -472,8 +479,8 @@ class SensorControllerTest {
     // Act + Assert
     mockMvc.perform(get("/sensors?id=" + sensor.getID().getID()))
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$.sensorID").value(sensor.getID().getID()))
-        .andExpect(jsonPath("$.sensorName").value(sensorName));
+        .andExpect(jsonPath("$.deviceID", is(deviceIDStr)))
+        .andExpect(jsonPath("$.sensorTypeID", is(sensorTypeIDStr)));
   }
 
 
@@ -484,6 +491,8 @@ class SensorControllerTest {
    */
   @Test
   void shouldNotFound_WhenNoSensorIsFound() throws Exception {
+    // Arrange
+
     // Act + Assert
     mockMvc.perform(get("/sensors/" ))
         .andExpect(status().isNotFound());
@@ -537,8 +546,10 @@ class SensorControllerTest {
     mockMvc.perform(get("/sensors")
             .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$._embedded.sensorDTOList[0].sensorName", is("DewPoint")))
-        .andExpect(jsonPath("$._embedded.sensorDTOList[1].sensorName", is("DewPoint")));
+        .andExpect(jsonPath("$._embedded.sensorDTOList[0].deviceID", is(deviceIDStr)))
+        .andExpect(jsonPath("$._embedded.sensorDTOList[0].sensorTypeID", is(sensorTypeIDStr)))
+        .andExpect(jsonPath("$._embedded.sensorDTOList[1].deviceID", is(deviceIDStr)))
+        .andExpect(jsonPath("$._embedded.sensorDTOList[1].sensorTypeID", is(sensorTypeIDStr)));
   }
 
   /**
@@ -555,6 +566,11 @@ class SensorControllerTest {
         .andExpect(jsonPath("$._links.self.href").exists());
   }
 
+
+  /**
+   * Should return a list of sensors by device ID
+   * @throws Exception if the test fails
+   */
   @Test
   void shouldReturnSensorsByDeviceID () throws Exception {
     //Arrange

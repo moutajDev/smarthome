@@ -3,18 +3,19 @@
 !pragma layout smetana
 
 autonumber
-actor "User" as User
+actor "Client" as User
 
-box "SmartHome"
-    participant Frontend as FE
-end box
+    participant "Browser" as FE
+    participant "API" as API
+
 
 User -> FE : I want to have today’s sunrise and sunset hours on the front/main page
 activate FE
 
-FE -> API : fetch (https://api.sunrise-sunset.org/jason)
+FE -> API : GET/https://api.sunrise-sunset.org/json
 activate API
-API --> FE : get sunrise and sunset hours
+
+API --> FE : Json, status ok
 deactivate API
 
 FE --> User : show sunrise and sunset hours

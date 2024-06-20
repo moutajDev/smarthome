@@ -17,11 +17,12 @@ end box
 participant " " as BD
 
 
-HTTP o-> CTRL : GET /devices?room_id={roomId}
+HTTP o-> CTRL : getDevicesByRoomId(strRoomID)
 activate CTRL
 
 CTRL -> DOM : RoomID(idStr)
 activate DOM
+
 DOM --> CTRL : roomID
 deactivate DOM
 
@@ -41,7 +42,7 @@ deactivate REPO
 SV --> CTRL : deviceList
 deactivate SV
 
-CTRL -->o HTTP : Json/status 200
+CTRL -->o HTTP : deviceListDTO/status 200
 deactivate CTRL
 
 

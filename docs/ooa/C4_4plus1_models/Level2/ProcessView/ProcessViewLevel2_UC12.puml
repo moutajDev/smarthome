@@ -8,19 +8,13 @@ autonumber
 participant " " as HTTP
 
 box "SmartHome"
-    participant "Frontend" as FE
     participant "Backend" as BE
 
 end box
-HTTP o-> FE: I want to get the devices with temperature functionality from a room
-activate FE
-
-FE -> BE : GET /grouped devices with temperature functionality
+HTTP o-> BE: getDevicesByRoomAndTemperatureFunctionality(map, roomDTO)
 activate BE
 
-BE --> FE : JSON, status 200
-deactivate BE
+BE -->o HTTP: List<DeviceDTO>
 
-FE -->o HTTP : devices
 
 @enduml

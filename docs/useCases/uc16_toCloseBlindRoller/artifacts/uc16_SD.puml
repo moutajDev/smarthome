@@ -99,7 +99,7 @@ activate ActuatorAssembler
 ActuatorAssembler --> ActuatorController: actuatorDTO
 deactivate ActuatorAssembler
 
-ActuatorController --> User: actuatorDTO
+ActuatorController -->o User: actuatorDTO
 deactivate ActuatorController
 
 @enduml
