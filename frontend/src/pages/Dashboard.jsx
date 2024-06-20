@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {styled, createTheme, ThemeProvider} from '@mui/material/styles';
+import {createTheme, styled, ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import MuiAppBar from '@mui/material/AppBar';
@@ -60,7 +60,7 @@ export default function Dashboard() {
                             noWrap
                             sx={{flexGrow: 1}}
                         >
-                            Smart Home
+                            Smart Home is finally here!
                         </Typography>
                     </Toolbar>
                 </AppBar>
