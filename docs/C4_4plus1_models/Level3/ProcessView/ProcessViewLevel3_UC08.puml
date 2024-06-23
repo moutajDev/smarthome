@@ -12,13 +12,13 @@ box "Backend" <<Container (C4)>>"
 end box
 
 
-HTTP o-> SE : POST /house
+HTTP o-> SE : PUT /device
 activate SE
 
-SE -> DB : save
+SE -> DB : findDeviceByID
 activate DB
 
-DB --> SE : houseDataModel
+DB --> SE : deviceDataModel
 deactivate DB
 
 

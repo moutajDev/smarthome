@@ -15,7 +15,7 @@ end box
 HTTP o-> SE : POST /device
 activate SE
 
-SE -> DB : SAVE device
+SE -> DB : save
 activate DB
 
 DB --> SE : deviceDataModel

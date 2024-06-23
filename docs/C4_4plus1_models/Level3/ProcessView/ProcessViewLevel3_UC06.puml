@@ -12,17 +12,17 @@ box "Backend" <<Container (C4)>>"
 end box
 
 
-HTTP o-> SE : POST /house
+HTTP o-> SE : GET /listOfDevicesByRoomId
 activate SE
 
-SE -> DB : save
+SE -> DB : findByRoomId
 activate DB
 
-DB --> SE : houseDataModel
+DB --> SE : deviceListDataModel
 deactivate DB
 
 
-SE -->o HTTP : JSON 201
+SE -->o HTTP : JSON 200
 deactivate SE
 
 deactivate HTTP
