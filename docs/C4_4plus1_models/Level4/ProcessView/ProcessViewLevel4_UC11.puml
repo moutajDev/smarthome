@@ -41,7 +41,7 @@ deactivate REPO
 
 SV --> CTRL : logList
 deactivate SV
-CTRL -->o User : json 200
+CTRL -->o User : logListDTO
 deactivate CTRL
 
 

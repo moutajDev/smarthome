@@ -59,7 +59,7 @@ deactivate REPO
 SV --> CTRL : deviceUpdated
 deactivate SV
 
-CTRL -->o HTTP : JSON status 200 OK
+CTRL -->o HTTP : deviceDTO
 deactivate CTRL
 
 
