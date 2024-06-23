@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css"
+     height="267px" preserveAspectRatio="none" style="width:506px;height:267px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 506 267" width="506px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <rect fill="#DDDDDD" height="255.5059" style="stroke:#181818;stroke-width:0.5;" width="348" x="152" y="6"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="191" x="230.5" y="18.5684">"Backend" &#171;Container (C4)&#187;"
+        </text>
+        <rect fill="#FFFFFF" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="214" y="104.5977"/>
+        <rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="428" y="133.9082"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="14" x2="14" y1="73.2871"
+              y2="210.5293"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="219" x2="219" y1="73.2871"
+              y2="210.5293"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="433" x2="433" y1="73.2871"
+              y2="210.5293"/>
+        <rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="18"
+              x="5" y="41.7988"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="12"
+              y="62.334">&#160;
+        </text>
+        <rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="18"
+              x="5" y="209.5293"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="12"
+              y="230.0645">&#160;
+        </text>
+        <rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126"
+              x="156" y="25.3105"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
+              textLength="112" x="163" y="45.8457">&#171;container (C4)&#187;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="197.5"
+              y="62.334">Server
+        </text>
+        <rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126"
+              x="156" y="209.5293"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
+              textLength="112" x="163" y="230.0645">&#171;container (C4)&#187;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="197.5"
+              y="246.5527">Server
+        </text>
+        <rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126"
+              x="370" y="25.3105"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
+              textLength="112" x="377" y="45.8457">&#171;container (C4)&#187;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="401.5"
+              y="62.334">Database
+        </text>
+        <rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126"
+              x="370" y="209.5293"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
+              textLength="112" x="377" y="230.0645">&#171;container (C4)&#187;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="401.5"
+              y="246.5527">Database
+        </text>
+        <rect fill="#FFFFFF" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="214" y="104.5977"/>
+        <rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="428" y="133.9082"/>
+        <ellipse cx="13.5" cy="103.8477" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1.5;"/>
+        <polygon fill="#181818" points="202,100.5977,212,104.5977,202,108.5977,206,104.5977"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="18" x2="208" y1="104.5977" y2="104.5977"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="21" y="99.8555">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="168" x="34"
+              y="99.8555">GET /actuator by device ID
+        </text>
+        <polygon fill="#181818" points="416,129.9082,426,133.9082,416,137.9082,420,133.9082"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="224" x2="422" y1="133.9082" y2="133.9082"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="231" y="129.166">2
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="158" x="244"
+              y="129.166">find actuator by deviceID
+        </text>
+        <polygon fill="#181818" points="235,159.2188,225,163.2188,235,167.2188,231,163.2188"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="229" x2="432" y1="163.2188"
+              y2="163.2188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="241" y="158.4766">3
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="167" x="254"
+              y="158.4766">list of actuatorDataModels
+        </text>
+        <ellipse cx="13.5" cy="191.7793" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1.5;"/>
+        <polygon fill="#181818" points="30.5,188.5293,20.5,192.5293,30.5,196.5293,26.5,192.5293"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="28.5" x2="218" y1="192.5293"
+              y2="192.5293"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="31" y="187.7871">4
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="44"
+              y="187.7871">JSON 200
+        </text><!--SRC=[RP3DJiD038JlVWgJ2t08gH2dAieXJSMFn8-Kle2pSSkAP3ViEXLzUzmWK4lhFNartyp8b-yYGvndsT2Hax7lRepliyYV8pl3QMjf4wY7Yo7GfYViQET7mTYpa2C06iMxiMyu00mKn1exg0yc-YZYmshr1j3uBqnACX_isWJpVE6Ta7KSy6fnTrqK2Q3E4Lvps7AOFEfbdfj_n2bGaL13aIUaAiyW6exQ103shT2dXLhZ7E-NAyp8o4ZY0pOxR7bh3UDZ1VfhjoIiGW0LArALYgojUfqYXqHL0gWs_KtfR1Jqwpzgt_VPjzn5QFc8ceBIma_7K_AfVdt1szdiKBVlSx3-dFaR]-->
+    </g>
+</svg>

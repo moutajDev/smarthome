@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css"
+     height="326px" preserveAspectRatio="none" style="width:780px;height:326px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 780 326" width="780px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <rect fill="#DDDDDD" height="314.127" style="stroke:#181818;stroke-width:0.5;" width="581" x="193" y="6"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="191" x="388" y="18.5684">"Backend" &#171;Container (C4)&#187;"
+        </text>
+        <rect fill="#FFFFFF" height="146.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="255"
+              y="104.5977"/>
+        <rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="702" y="133.9082"/>
+        <rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="702" y="192.5293"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="14" x2="14" y1="73.2871"
+              y2="269.1504"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="260" x2="260" y1="73.2871"
+              y2="269.1504"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="707" x2="707" y1="73.2871"
+              y2="269.1504"/>
+        <rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="18"
+              x="5" y="41.7988"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="12"
+              y="62.334">&#160;
+        </text>
+        <rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="18"
+              x="5" y="268.1504"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="12"
+              y="288.6855">&#160;
+        </text>
+        <rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126"
+              x="197" y="25.3105"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
+              textLength="112" x="204" y="45.8457">&#171;container (C4)&#187;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="238.5"
+              y="62.334">Server
+        </text>
+        <rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126"
+              x="197" y="268.1504"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
+              textLength="112" x="204" y="288.6855">&#171;container (C4)&#187;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="238.5"
+              y="305.1738">Server
+        </text>
+        <rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126"
+              x="644" y="25.3105"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
+              textLength="112" x="651" y="45.8457">&#171;container (C4)&#187;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="675.5"
+              y="62.334">Database
+        </text>
+        <rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126"
+              x="644" y="268.1504"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing"
+              textLength="112" x="651" y="288.6855">&#171;container (C4)&#187;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="675.5"
+              y="305.1738">Database
+        </text>
+        <rect fill="#FFFFFF" height="146.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="255"
+              y="104.5977"/>
+        <rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="702" y="133.9082"/>
+        <rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="702" y="192.5293"/>
+        <ellipse cx="13.5" cy="103.8477" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1.5;"/>
+        <polygon fill="#181818" points="243,100.5977,253,104.5977,243,108.5977,247,104.5977"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="18" x2="249" y1="104.5977" y2="104.5977"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="21" y="99.8555">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="209" x="34"
+              y="99.8555">GET/ temperature difference logs
+        </text>
+        <polygon fill="#181818" points="690,129.9082,700,133.9082,690,137.9082,694,133.9082"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="265" x2="696" y1="133.9082" y2="133.9082"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="272" y="129.166">2
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="370" x="285"
+              y="129.166">find inside device readings by Sensor Type and date period
+        </text>
+        <polygon fill="#181818" points="276,159.2188,266,163.2188,276,167.2188,272,163.2188"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="270" x2="706" y1="163.2188"
+              y2="163.2188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="282" y="158.4766">3
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="295"
+              y="158.4766">insideLogsDataModel
+        </text>
+        <polygon fill="#181818" points="690,188.5293,700,192.5293,690,196.5293,694,192.5293"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="265" x2="696" y1="192.5293" y2="192.5293"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="272" y="187.7871">4
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="405" x="285"
+              y="187.7871">find outsideside device readings by Sensor Type and date period
+        </text>
+        <polygon fill="#181818" points="276,217.8398,266,221.8398,276,225.8398,272,221.8398"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="270" x2="706" y1="221.8398"
+              y2="221.8398"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="282" y="217.0977">5
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="144" x="295"
+              y="217.0977">outsideLogsDataModel
+        </text>
+        <ellipse cx="13.5" cy="250.4004" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1.5;"/>
+        <polygon fill="#181818" points="30.5,247.1504,20.5,251.1504,30.5,255.1504,26.5,251.1504"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="28.5" x2="259" y1="251.1504"
+              y2="251.1504"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="31" y="246.4082">6
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="44"
+              y="246.4082">JSON 200
+        </text><!--SRC=[hPBBJiCm44NtynL3Di0Yf4AigYYBD1K8yPAI7vZ4qs2HsC5sAlhtJ5eGVI1MnAj8zvovVfo_XZ3uUP8C7PamzjrLO_l4y_l8fk5OQMeTzN0sE6fxmeusTWpeUmva2836OCtOr-m01d91DteG3qQooEDTLRq0rFO3evoQDpOgmZHTM1D86tPuiRYvpB88KBu3l6ItPhTrbCiqROw8Kw2WG3LvtY95_WiYmr6Q0C3K2csSYHhdUBki4WpS3-meZ8vHwTMAtRHzx6phWPgWrnHOuW2225Za0gwq6BNnMWd3QorvnwIqQJtM6opPUEkmsWoC94arAMI8jkf7MUG08ek_o-nq3p9ssj2ZLTo1ueFuSGEvZudvrnfVpZzxx9h4cTtUia3tvVCJNizc-y7foFP-T-_X4m00]-->
+    </g>
+</svg>
