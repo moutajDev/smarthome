@@ -12,10 +12,10 @@ box "SmartHome <<System (C4)>>"
 
 end box
 
-HTTP -> BE : POST /actuators
+HTTP o-> BE : POST /actuators
 activate BE
 
-BE --> HTTP : JSON 201
+BE -->o HTTP : JSON 201
 deactivate BE
 
 
