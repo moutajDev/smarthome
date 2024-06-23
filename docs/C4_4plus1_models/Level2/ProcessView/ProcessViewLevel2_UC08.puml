@@ -10,7 +10,7 @@ box "Smart Home <<System (C4)>>"
 end box
 
 
-HTTP o-> BE : PUT /device/deactivate/{id}
+HTTP o-> BE : PUT /devices/deactivate/{id}
 activate BE
 
 BE -->o HTTP : JSON 201

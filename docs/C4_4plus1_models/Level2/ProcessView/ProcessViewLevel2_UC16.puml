@@ -9,7 +9,7 @@ autonumber
     participant Backend as BE<<container (C4)>>
     end box
 
-HTTP o-> BE : POST /set blindRoller Value
+HTTP o-> BE : POST /actuators set blindRoller Value
 activate BE
 
 BE -->o HTTP : JSON 201

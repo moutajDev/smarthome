@@ -11,7 +11,7 @@ box "Smart Home <<System (C4)>>"
 end box
 
 
-HTTP o-> Backend: POST /Room
+HTTP o-> Backend: POST /rooms
 activate Backend
 
 Backend -->o HTTP: JSON 201

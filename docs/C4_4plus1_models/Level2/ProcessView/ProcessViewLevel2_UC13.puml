@@ -12,7 +12,7 @@ box "SmartHome <<System (C4)>>"
 end box
 
 
-HTTP o-> BE : GET/ temperature difference logs
+HTTP o-> BE : GET/sensors temperature difference logs
 activate BE
 
 
