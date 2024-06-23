@@ -4,22 +4,17 @@
 
 autonumber
 
-actor "User" as User
-participant "RestClient" as RC
+participant " " as User
 
 box "SmartHome"
-    participant "Controller" as CTRL
-    participant "Service" as SV
-    participant "Repository" as REPO
-    participant "DataBase" as BD
+    participant "Controller" as CTRL<<component>>
+    participant "Service" as SV<<component>>
+    participant "Repository" as REPO<<component>>
 end box
+participant " " as BD
 
 
-User -> RC : I want to get all devices grouped by functionality
-activate RC
-
-
-RC -> CTRL: getAllDevicesGroupedByFunctionality()
+User o-> CTRL : I want to get all devices grouped by functionality
 activate CTRL
 
 
@@ -29,14 +24,10 @@ activate SV
 SV -> REPO : findAll()
 activate REPO
 
-REPO -> BD : find
-activate BD
-
-BD --> REPO : deviceTypeDataModelList
-deactivate BD
+REPO ->o BD : find
+BD o--> REPO : deviceTypeDataModelList
 
 REPO --> SV : deviceTypeList
-deactivate BD
 deactivate REPO
 
 SV --> CTRL : deviceTypeList
@@ -48,11 +39,8 @@ activate SV
 SV -> REPO : findByDeviceTypeID(deviceTypeID)
 activate REPO
 
-REPO -> BD : find
-activate BD
-
-BD --> REPO : deviceDataModelList
-deactivate BD
+REPO ->o BD : find
+BD o--> REPO : deviceDataModelList
 
 REPO --> SV : deviceList
 deactivate REPO
@@ -60,11 +48,8 @@ deactivate REPO
 SV --> CTRL : deviceList
 deactivate SV
 
-CTRL --> RC : deviceDTOListGroupedByFuncionallity
+CTRL -->o User : deviceDTOListGroupedByFuncionallity
 deactivate CTRL
-
-RC --> User : deviceDTOListGroupedByFuncionallity
-deactivate RC
 
 
 @enduml

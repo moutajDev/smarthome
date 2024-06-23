@@ -7,12 +7,11 @@ autonumber
 participant " " as User
 
 box "Server"
-    participant "Controller" as Controller
-    participant "Service" as Service
-    participant "Repository" as Repo
-    participant "Domain" as Domain
+    participant "Controller" as Controller <<component>>
+    participant "Service" as Service<<component>>
+    participant "Repository" as Repo<<component>>
+    participant "Domain" as Domain<<component>>
 end box
-
     participant " " as BD
 
 User o-> Controller : POST /actuator (json)

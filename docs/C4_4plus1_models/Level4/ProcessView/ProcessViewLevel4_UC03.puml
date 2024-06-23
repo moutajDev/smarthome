@@ -8,14 +8,14 @@ autonumber
 participant " " as HTTP
 
 box "Server"
-    participant "Controller" as CTRL
-    participant "Service" as SV
-    participant "Repository" as REPO
+    participant "Controller" as CTRL<<component>>
+    participant "Service" as SV<<component>>
+    participant "Repository" as REPO<<component>>
 
 end box
-participant "DataBase" as BD
+participant " " as BD
 
-HTTP -> CTRL : GET /rooms
+HTTP o-> CTRL : GET /rooms
 activate CTRL
 
 
@@ -25,11 +25,8 @@ activate SV
 SV -> REPO : findAll()
 activate REPO
 
-REPO -> BD : find
-activate BD
-
-BD --> REPO : roomDataModelList
-deactivate BD
+REPO ->o BD : find
+BD o--> REPO : roomDataModelList
 
 REPO --> SV : roomList
 deactivate REPO
@@ -37,7 +34,7 @@ deactivate REPO
 SV --> CTRL : roomList
 deactivate SV
 
-CTRL --> HTTP : roomDTOList
+CTRL -->o HTTP : roomDTOList
 deactivate CTRL
 
 

@@ -3,17 +3,15 @@
 
 participant " " as User
 box "Power Consumption"
-participant Controller as ":Controller"
-participant Service as ":Service"
-participant Repository as ":Repository"
-participant Domain as ":Domain"
+participant Controller as "Controller"<<component>>
+participant Service as "Service"<<component>>
+participant Repository as "Repository"<<component>>
+participant Domain as "Domain"<<component>>
 end box
 
 participant DataBase as " "
 
-
 autonumber
-
 
 User o-> Controller: getMaxInstTempDiffBetweenDeviceAndOutside( outsideDeviceIDStr, insideDeviceIDStr, initialTime, endTime, timeDelta)
 

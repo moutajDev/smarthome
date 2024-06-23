@@ -6,10 +6,10 @@ autonumber
 participant " " as HTTP
 
 box "Server"
-    participant ":Controller" as Controller
-    participant Service as ":Service"
-    participant Repository as ":Repository"
-    participant BlindRollerActuator as ":BlindRollerActuator"
+    participant "Controller" as Controller<<component>>
+    participant Service as "Service"<<component>>
+    participant Repository as "Repository"<<component>>
+    participant Domain as "Domain"<<component>>
 
     end box
 
@@ -54,11 +54,11 @@ deactivate Service
 Controller -> Service: setValue (actuatorBlindRoller, blindRollerValue)
 activate Service
 
-Service -> BlindRollerActuator: setValue(blindRollerValue)
-activate BlindRollerActuator
+Service -> Domain: setValue(blindRollerValue)
+activate Domain
 
-BlindRollerActuator --> Service: blindRollerValue
-deactivate BlindRollerActuator
+Domain --> Service: blindRollerValue
+deactivate Domain
 
 Service --> Controller: blindRollerValue
 deactivate Service

@@ -5,16 +5,16 @@
 participant " " as HTTP
 
 box "Server"
-participant Controller as "Controller"
-participant Service as "Service"
-participant Repository as "Repository"
+participant Controller as "Controller"<<component>>
+participant Service as "Service"<<component>>
+participant Repository as "Repository"<<component>>
 end box
 
 participant DataBase as " "
 
 autonumber
 
-HTTP -> Controller : GET /peak-power-consumption
+HTTP o-> Controller : GET /peak-power-consumption
 
 activate Controller
 
@@ -114,7 +114,7 @@ Service --> Controller: maxPowerConsumptionValue
 
 deactivate Service
 
-Controller --> HTTP: JSON / Status 200
+Controller -->o HTTP: JSON / Status 200
 
 deactivate Controller
 

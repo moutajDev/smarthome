@@ -7,15 +7,15 @@ autonumber
 participant " " as HTTP
 
 box "Server"
-participant "Routing" as ROUT
-    participant "Controller" as CTRL
-    participant "Service" as SV
-    participant "Repository" as REPO
-    participant "Domain" as DOM
+participant "Routing" as ROUT<<component>>
+    participant "Controller" as CTRL<<component>>
+    participant "Service" as SV<<component>>
+    participant "Repository" as REPO<<component>>
+    participant "Domain" as DOM<<component>>
 end box
 participant " " as BD
 
-HTTP -> ROUT : POST /device
+HTTP o-> ROUT : POST /device
 activate ROUT
 
 ROUT -> CTRL : addDevice (deviceEntryDTO)
@@ -53,7 +53,7 @@ deactivate SV
 CTRL --> ROUT : deviceDTO
 deactivate CTRL
 
-ROUT --> HTTP : JSON Status ok
+ROUT -->o HTTP : JSON Status ok
 deactivate ROUT
 
 

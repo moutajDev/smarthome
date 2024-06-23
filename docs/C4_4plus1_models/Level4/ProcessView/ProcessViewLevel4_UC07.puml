@@ -7,15 +7,15 @@ autonumber
 participant " " as HTTP
 
 box "Server"
-    participant "Controller" as CTRL
-    participant "Service" as SV
-    participant "Repository" as RP
+    participant "Controller" as CTRL<<component>>
+    participant "Service" as SV<<component>>
+    participant "Repository" as RP<<component>>
 
 end box
 participant " " as BD
 
 
-HTTP -> CTRL : POST /sensor
+HTTP o-> CTRL : POST /sensor
 activate CTRL
 
 CTRL -> SV : addSensor(sensorEntryDTO)
@@ -32,7 +32,7 @@ deactivate RP
 SV --> CTRL : sensor
 deactivate SV
 
-CTRL --> HTTP : JSON/status 201
+CTRL -->o HTTP : JSON/status 201
 deactivate CTRL
 
 

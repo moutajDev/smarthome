@@ -7,14 +7,12 @@ autonumber
 participant " " as User
 
 box "SmartHome"
-    participant ":Controller" as CTRL
-    participant ":Service" as SV
-    participant ":Repository" as REPO
-    participant ":Domain" as DOM
+    participant "Controller" as CTRL<<component>>
+    participant "Service" as SV<<component>>
+    participant "Repository" as REPO<<component>>
+    participant "Domain" as DOM<<component>>
 end box
     participant " " as BD
-
-
 
 User o-> CTRL : listDevices (strRoomID, strDeviceType)
 

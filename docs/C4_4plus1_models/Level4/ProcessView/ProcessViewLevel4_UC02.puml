@@ -7,16 +7,16 @@ autonumber
 participant " " as HTTP
 
 box "Server"
-    participant "Controller" as CTRL
-    participant "Service" as SV
-    participant "Repository" as REPO
-    participant "Domain" as DOM
+    participant "Controller" as CTRL<<component>>
+    participant "Service" as SV<<component>>
+    participant "Repository" as REPO<<component>>
+    participant "Domain" as DOM<<component>>
 
 end box
-participant "DataBase" as BD
+participant " " as BD
 
 
-HTTP -> CTRL : POST /Room
+HTTP o-> CTRL : POST /Room
 activate CTRL
 
 
@@ -41,9 +41,7 @@ activate SV
 
 SV -> REPO : save(room)
 activate REPO
-REPO -> BD : save
-activate BD
-deactivate BD
+REPO ->o BD : save
 REPO --> SV : room
 deactivate REPO
 
@@ -51,7 +49,7 @@ SV --> CTRL : room
 deactivate SV
 
 
-CTRL --> HTTP : roomDTO
+CTRL -->o HTTP : roomDTO
 deactivate CTRL
 
 

@@ -6,9 +6,9 @@ autonumber
 participant " " as HTTP
 
 box "Server"
-participant Controller as ":Controller"
-participant Service as ":Service"
-participant Repository as ":Repository"
+participant Controller as ":Controller"<<component>>
+participant Service as ":Service"<<component>>
+participant Repository as ":Repository"<<component>>
 end box
 participant DataBase as " "
 
