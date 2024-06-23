@@ -32,7 +32,7 @@ deactivate RP
 SV --> CTRL : sensor
 deactivate SV
 
-CTRL -->o HTTP : JSON/status 201
+CTRL -->o HTTP : sensorDTO
 deactivate CTRL
 
 

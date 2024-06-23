@@ -64,7 +64,7 @@ deactivate REPO
 SV --> CTRL : deviceList
 deactivate SV
 
-CTRL -->o User :deviceListDTO, status 200
+CTRL -->o User :deviceListDTO
 deactivate CTRL
 
 

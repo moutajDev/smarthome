@@ -43,7 +43,7 @@ deactivate Service
 
 'Controller -> Controller : json = serialize(actuatorDTO)
 
-Controller -->o User : json 201
+Controller -->o User : actuatorDTO
 deactivate Controller
 
 

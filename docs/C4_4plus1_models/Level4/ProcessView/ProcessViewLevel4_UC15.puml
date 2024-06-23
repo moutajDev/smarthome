@@ -31,7 +31,7 @@ deactivate Repository
 Service --> Controller: listActuators
 deactivate Service
 
-Controller -->o HTTP: actuatorListDTO, status 200
+Controller -->o HTTP: actuatorListDTO
 deactivate Controller
 
 

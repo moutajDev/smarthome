@@ -114,7 +114,7 @@ Service --> Controller: maxPowerConsumptionValue
 
 deactivate Service
 
-Controller -->o HTTP: JSON / Status 200
+Controller -->o HTTP: maxPowerConsumptionValue
 
 deactivate Controller
 

@@ -32,7 +32,7 @@ SV --> CTRL : sensorType
 deactivate SV
 
 
-CTRL -->o HTTP : JSON/status 20
+CTRL -->o HTTP : sensorTypeDTO
 deactivate CTRL
 
 

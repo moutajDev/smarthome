@@ -64,7 +64,7 @@ Service --> Controller: blindRollerValue
 deactivate Service
 
 
-Controller -->o HTTP: actuatorDTO, status 201
+Controller -->o HTTP: actuatorDTO
 deactivate Controller
 
 

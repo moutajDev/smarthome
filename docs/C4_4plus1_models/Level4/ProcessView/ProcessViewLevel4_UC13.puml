@@ -90,7 +90,7 @@ activate Service
 Service --> Controller: maxInstTempDiff
 deactivate Service
 
-Controller -->o User: temperatureDiff, status 200
+Controller -->o User: temperatureDiff
 deactivate Controller
 
 

@@ -11,7 +11,7 @@ box "SmartHome <<System (C4)>>"
     participant "Backend" as BE<<container (C4)>>
 end box
 
-HTTP o-> BE : GET /sensors peak power consumption in a time period
+HTTP o-> BE : GET /logs peak power consumption in a time period
 activate BE
 
 
