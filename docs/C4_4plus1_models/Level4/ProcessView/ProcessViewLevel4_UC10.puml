@@ -14,7 +14,7 @@ box "Server"
 end box
     participant " " as BD
 
-User o-> Controller : POST /actuator (json)
+User o-> Controller : POST /actuators
 activate Controller
 
 'Controller -> Controller: actuatorEntryDTO = deserialize(json)

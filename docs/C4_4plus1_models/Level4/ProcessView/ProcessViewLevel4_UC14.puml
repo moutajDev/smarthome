@@ -14,7 +14,7 @@ participant DataBase as " "
 
 autonumber
 
-HTTP o-> Controller : GET /peak-power-consumption
+HTTP o-> Controller : GET /logs/peak-power-consumption
 
 activate Controller
 

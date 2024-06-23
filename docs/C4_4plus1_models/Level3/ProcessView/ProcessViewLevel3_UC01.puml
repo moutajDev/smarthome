@@ -12,7 +12,7 @@ box "Backend" <<Container (C4)>>"
 end box
 
 
-HTTP o-> SE : POST /house
+HTTP o-> SE : POST /houses
 activate SE
 
 SE -> DB : save

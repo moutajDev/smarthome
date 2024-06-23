@@ -6,13 +6,13 @@ autonumber
 
 participant " " as HTTP
 
-box "Backend" <<Container (C4)>>"
+box "Backend <<Container (C4)>>"
     participant "Server" as SE<<container (C4)>>
     participant "Database" as DB<<container (C4)>>
 end box
 
 
-HTTP o-> SE : GET/ temperature difference logs
+HTTP o-> SE : GET/logs/temperature-difference
 activate SE
 
 SE -> DB : find inside device readings by Sensor Type and date period

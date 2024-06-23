@@ -15,7 +15,7 @@ end box
 participant " " as BD
 
 
-HTTP o-> CTRL : POST /sensor
+HTTP o-> CTRL : POST /sensors
 activate CTRL
 
 CTRL -> SV : addSensor(sensorEntryDTO)

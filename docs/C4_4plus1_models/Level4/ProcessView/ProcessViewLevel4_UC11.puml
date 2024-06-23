@@ -15,7 +15,7 @@ end box
 
 participant " " as BD
 
-User o-> CTRL : GET /logs?deviceID={deviceID}&timeStart={timeStart}&timeEnd={timeEnd}
+User o-> CTRL : GET /logs by deviceID and time period
 activate CTRL
 CTRL -> DOM : DatePeriod (start, end)
 activate DOM

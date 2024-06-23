@@ -14,7 +14,7 @@ end box
 participant " " as BD
 
 
-User o-> CTRL : I want to get all devices grouped by functionality
+User o-> CTRL : GET /devices grouped by functionality
 activate CTRL
 
 

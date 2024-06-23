@@ -14,7 +14,7 @@ box "SmartHome"
 end box
     participant " " as BD
 
-User o-> CTRL : listDevices (strRoomID, strDeviceType)
+User o-> CTRL : GET /devices by device type
 
 activate CTRL
 

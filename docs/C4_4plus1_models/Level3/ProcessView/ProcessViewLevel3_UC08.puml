@@ -12,7 +12,7 @@ box "Backend" <<Container (C4)>>"
 end box
 
 
-HTTP o-> SE : PUT /device
+HTTP o-> SE : PUT /devices/deactivate/{id}
 activate SE
 
 SE -> DB : findDeviceByID

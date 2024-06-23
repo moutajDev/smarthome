@@ -16,7 +16,7 @@ box "Server"
     participant DataBase as " "
 
 
-HTTP o-> Controller: setBlindRoller (actuatorValueEntryDTO)
+HTTP o-> Controller: POST /actuators set blind roller
 activate Controller
 
 Controller -> Service: getActuatorByID (actuatorID)

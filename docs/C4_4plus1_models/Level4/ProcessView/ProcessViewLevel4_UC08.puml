@@ -16,7 +16,7 @@ participant " " as BD
 
 
 
-HTTP o-> CTRL : deactivateDevice(strDeviceID)
+HTTP o-> CTRL : PUT /devices/deactivate/{id}
 activate CTRL
 
 CTRL -> DOM: DeviceID(strDeviceID)

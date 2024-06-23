@@ -12,7 +12,7 @@ participant Repository as ":Repository"<<component>>
 end box
 participant DataBase as " "
 
-HTTP o-> Controller: getActuatorsByDeviceID (strDeviceID)
+HTTP o-> Controller: GET /actuators/{deviceID}
 activate Controller
 
 Controller -> Service : getActuatorsByDeviceID(deviceID)

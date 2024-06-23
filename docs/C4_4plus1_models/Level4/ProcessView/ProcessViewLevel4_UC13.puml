@@ -13,7 +13,7 @@ participant DataBase as " "
 
 autonumber
 
-User o-> Controller: getMaxInstTempDiffBetweenDeviceAndOutside( outsideDeviceIDStr, insideDeviceIDStr, initialTime, endTime, timeDelta)
+User o-> Controller: GET/logs/temperature-difference
 
 activate Controller
 

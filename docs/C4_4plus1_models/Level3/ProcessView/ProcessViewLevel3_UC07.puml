@@ -12,7 +12,7 @@ box "Backend" <<Container (C4)>>"
 end box
 
 
-HTTP o-> SE : POST /sensor
+HTTP o-> SE : POST /sensors
 activate SE
 
 SE -> DB : save

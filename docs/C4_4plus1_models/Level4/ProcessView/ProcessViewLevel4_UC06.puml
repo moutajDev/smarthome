@@ -17,10 +17,10 @@ end box
 participant " " as BD
 
 
-HTTP o-> CTRL : getDevicesByRoomId(strRoomID)
+HTTP o-> CTRL : GET /devices/{roomId}
 activate CTRL
 
-CTRL -> DOM : RoomID(idStr)
+CTRL -> DOM : roomID(roomId)
 activate DOM
 
 DOM --> CTRL : roomID

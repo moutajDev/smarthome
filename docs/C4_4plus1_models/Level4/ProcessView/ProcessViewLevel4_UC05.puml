@@ -14,7 +14,7 @@ box "Server"
 end box
 participant " " as BD
 
-HTTP o-> CTRL : POST /device
+HTTP o-> CTRL : POST /devices
 activate CTRL
 
 CTRL -> DOM : RoomID(idStr)

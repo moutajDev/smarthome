@@ -12,7 +12,7 @@ box "Backend" <<Container (C4)>>"
 end box
 
 
-HTTP o-> SE : GET /devices/grouped
+HTTP o-> SE : GET /devices grouped by functionality
 activate SE
 
 SE -> DB : findAllDevicesType
