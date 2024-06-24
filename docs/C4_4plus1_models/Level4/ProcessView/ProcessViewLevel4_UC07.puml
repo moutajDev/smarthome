@@ -10,6 +10,7 @@ box "Server"
     participant "Controller" as CTRL<<component>>
     participant "Service" as SV<<component>>
     participant "Repository" as RP<<component>>
+     participant "Domain" as Domain<<component>>
 
 end box
 participant " " as BD
@@ -18,13 +19,18 @@ participant " " as BD
 HTTP o-> CTRL : POST /sensors
 activate CTRL
 
-CTRL -> SV : addSensor(sensorEntryDTO)
+CTRL -> SV : addSensor(sensorParameters)
+
 activate SV
 
-SV -> RP : addSensor(parameters)
+SV -> Domain: sensor = create(sensorParameters)
+activate Domain
+deactivate Domain
+
+SV -> RP : save(sensor)
 activate RP
 
-RP ->o BD : save(sensorDataModel)
+RP ->o BD : save(sensor)
 
 RP --> SV : sensor
 deactivate RP
