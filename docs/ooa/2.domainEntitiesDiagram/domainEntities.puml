@@ -19,11 +19,9 @@ note "Each aggregate is only known to the outside via their ID's." as note
 
 
 
-House -left-> "1" Address : has
-House -right-> "1" GPS : has
+
 House "1" <-- "1..*" Room : belongs to
 Room "1" <-- Device : belongs to
-Room "*" -right-> "1" Dimensions : has
 Device "1" <-- Sensor : knows
 Device "1" <-- Actuator : knows
 Device "1" --> DeviceType : knows
