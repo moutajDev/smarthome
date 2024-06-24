@@ -21,7 +21,7 @@ activate DB
 DB --> SE : insideLogsDataModel
 deactivate DB
 
-SE -> DB : find outsideside device readings by Sensor Type and date period
+SE -> DB : find outside device readings by Sensor Type and date period
 activate DB
 
 DB --> SE : outsideLogsDataModel

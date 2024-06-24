@@ -1,19 +1,18 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-participant " " as User
+
 box "Power Consumption"
 participant Controller as "Controller"<<component>>
 participant Service as "Service"<<component>>
-participant Repository as "Repository"<<component>>
 participant Domain as "Domain"<<component>>
+participant Repository as "Repository"<<component>>
 end box
 
-participant DataBase as " "
 
 autonumber
 
-User o-> Controller: GET/logs/temperature-difference
+[o-> Controller: GET/logs/temperature-difference
 
 activate Controller
 
@@ -54,10 +53,10 @@ Service -> Repository: findByDeviceIDAndSensorTypeAndDatePeriodBetween(deviceID,
 
 activate Repository
 
-Repository ->o DataBase: find
+Repository ->o] : find
 
 
-DataBase o--> Repository: logList
+Repository <--o] : logList
 
 Repository --> Service: logInsideReadingsList
 deactivate Repository
@@ -72,9 +71,9 @@ Service -> Repository: findByDeviceIDAndSensorTypeAndDatePeriodBetween(deviceID,
 
 activate Repository
 
-Repository ->o DataBase: find
+Repository ->o] : find
 
-DataBase o--> Repository: loglist
+Repository <--o] : logList
 
 
 
@@ -90,13 +89,7 @@ activate Service
 Service --> Controller: maxInstTempDiff
 deactivate Service
 
-Controller -->o User: temperatureDiff
+[o<-- Controller : temperatureDiff
 deactivate Controller
-
-
-
-
-
-
 
 @enduml
