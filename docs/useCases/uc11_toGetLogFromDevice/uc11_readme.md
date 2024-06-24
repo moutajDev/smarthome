@@ -48,6 +48,14 @@ This use case depends on UC03 and UC06.
 ### 2.2. Sequence Diagram
 ![UC11-SD](artifacts/uc11_SD_v1.svg)
 
+### 2.3. C4 & 4+1 model
+#### Level 2
+![](../../C4_4plus1_models/Level2/ProcessView/ProcessViewLevel2_UC11_v1.svg)
+#### Level 3
+![](../../C4_4plus1_models/Level3/ProcessView/ProcessViewLevel3_UC11_v1.svg)
+#### Level 4
+![](../../C4_4plus1_models/Level4/ProcessView/ProcessViewLevel4_UC11_v1.svg)
+
 
 ### 2.3 Applied Patterns
 - All classes have only one and well-defined responsibility.
