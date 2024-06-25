@@ -42,30 +42,27 @@ SV --> CTRL : deviceList
 deactivate REPO
 deactivate SV
 
+
+
+alt deviceTypeID == temperature
 CTRL -> DOM : deviceTypeID(strDeviceType)
 activate DOM
 
 DOM --> CTRL : deviceTypeID
 deactivate DOM
 
-CTRL -> SV : getDevicesByDeviceTypeID(deviceTypeID)
-activate SV
+CTRL -> CTRL : addDevice(deviceTypeID)
 
-SV -> REPO : findByDeviceTypeID(deviceTypeID)
-activate REPO
+CTRL -> DOM : domainToDTO (filteredList)
+activate DOM
 
-REPO ->o BD : find
+DOM --> CTRL : deviceListDTO
+deactivate DOM
 
-BD o--> REPO : deviceDataModelList
-
-REPO --> SV : deviceList
-deactivate REPO
-
-SV --> CTRL : deviceList
-deactivate SV
+end
 
 CTRL -->o User :deviceListDTO
-deactivate CTRL
+
 
 
 
