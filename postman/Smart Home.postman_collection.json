@@ -1,0 +1,917 @@
+{
+	"info": {
+		"_postman_id": "7c694c77-4e93-4722-9c76-e114734eee3a",
+		"name": "Smart Home",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27961268",
+		"_collection_link": "https://crimson-crater-209650.postman.co/workspace/Switch-Dev-G1~4a2f1e71-6353-49ee-8e28-fc0b6bb8bec5/collection/27961268-7c694c77-4e93-4722-9c76-e114734eee3a?action=share&source=collection_link&creator=27961268"
+	},
+	"item": [
+		{
+			"name": "Get units",
+			"item": [
+				{
+					"name": "get units",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/units"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc1: Create a House",
+			"item": [
+				{
+					"name": "Configure House",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"houseID\", jsonData.houseID);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"street\": \"123 Smart St\",\r\n  \"doorNumber\": \"101\",\r\n  \"postalCode\": \"90210\",\r\n  \"countryCode\": \"US\",\r\n  \"latitude\": 34.0522,\r\n  \"longitude\": -118.2437\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/houses"
+					},
+					"response": []
+				},
+				{
+					"name": "get House Exists by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/houses/{{houseID}}"
+					},
+					"response": []
+				},
+				{
+					"name": "get House by ID - non existent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/houses/123"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc2: Add a Room",
+			"item": [
+				{
+					"name": "Add a Room - Kitchen",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"roomID\", jsonData.roomId);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Kitchen\",\n  \"floor\": \"1\",\n  \"width\": 2,\n  \"length\": 4,\n  \"height\": 5\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/rooms"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Room - Bedroom",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"roomID\", jsonData.roomId);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Bedroom\",\n  \"floor\": \"1\",\n  \"width\": 2,\n  \"length\": 4,\n  \"height\": 5\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/rooms"
+					},
+					"response": []
+				},
+				{
+					"name": "get room by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/rooms/{{roomID}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc3: get list of rooms",
+			"item": [
+				{
+					"name": "Get a List of Rooms",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/rooms"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc4: define sensor type",
+			"item": [
+				{
+					"name": "Create a Sensor Type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"sensorTypeID\", jsonData.sensorTypeID);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Temperature\",\r\n  \"unitID\": \"Celsius\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/sensor-types"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sensor Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/sensor-types"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sensor Types By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/sensor-types/{{sensorTypeID}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc4: Create Actuator Type",
+			"item": [
+				{
+					"name": "add actuator type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"actuatorTypeID\", jsonData.actuatorTypeID);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actuatorTypeDescription\": \"BlindRoller\",\n    \"unit\": \"Percent\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/actuator-types/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"actuatorTypeID\", jsonData.actuatorTypeID);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actuatorTypeDescription\": \"BlindRoller\",\n    \"unit\": \"Percent\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/actuator-types/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc5: Add Device To Room",
+			"item": [
+				{
+					"name": "Add a Device with Type Thermostat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"deviceID\", jsonData.deviceID);\r",
+									"\r",
+									"pm.test(\"Status code is 201 Created\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deviceTypeDescription\": \"Thermostat\",\r\n  \"deviceName\": \"My Beautiful Thermostat\",\r\n  \"roomID\": \"{{roomID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/devices"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Device with Type Bulb - to be deactivated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"deviceIDToDeactivate\", jsonData.deviceID);\r",
+									"\r",
+									"pm.test(\"Status code is 201 Created\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deviceTypeDescription\": \"Bulb\",\r\n  \"deviceName\": \"My Beautiful Bulb\",\r\n  \"roomID\": \"{{roomID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/devices"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc6: get list of devices in room",
+			"item": [
+				{
+					"name": "get list of devices in room",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/devices/{{roomID}}/room"
+					},
+					"response": []
+				},
+				{
+					"name": "get device by id using request param",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/devices?deviceId=7192475c-a15a-4a7a-9f63-03211e61760a\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							],
+							"query": [
+								{
+									"key": "deviceId",
+									"value": "7192475c-a15a-4a7a-9f63-03211e61760a\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get list of devices in room using request param",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/devices?roomId=de227dcd-58ef-4699-b582-73d89e813497",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							],
+							"query": [
+								{
+									"key": "roomId",
+									"value": "de227dcd-58ef-4699-b582-73d89e813497"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc7: add sensor to device",
+			"item": [
+				{
+					"name": "add sensor to device generic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"genericSensor\",\r\n    \"deviceID\": \"{{deviceID}}\",\r\n    \"sensorModelPath\": \"smarthome.domain.sensor.temperature_sensor.TemperatureSensor\",\r\n    \"sensorName\": \"Sensor1\",\r\n    \"sensorTypeID\": \"Temperature\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/sensors"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all sensors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/sensors"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sensor by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/sensors/{{sensorID}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc8: deactivate a device",
+			"item": [
+				{
+					"name": "deactivate device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/devices/deactivate/{{deviceIDToDeactivate}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc9: get devices grouped by funcionality",
+			"item": [
+				{
+					"name": "get devices grouped",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "http://localhost:8080/devices/grouped"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc10: add actuator to device",
+			"item": [
+				{
+					"name": "add actuator to device generic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"genericActuator\",\r\n    \"deviceID\": \"{{deviceID}}\",\r\n    \"actuatorModelPath\": \"c21hcnRob21lLmRvbWFpbi5hY3R1YXRvci5ibGluZF9yb2xsZXJfYWN0dWF0b3IuQmxpbmRSb2xsZXJBY3R1YXRvcg==\",  \r\n    \"actuatorTypeID\": \"{{actuatorTypeID}}\",\r\n    \"actuatorName\": \"actuator1\"\r\n   \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/actuators"
+					},
+					"response": []
+				},
+				{
+					"name": "add set integer actuator to device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"actuatorID\", jsonData.actuatorID);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"integerActuator\",\r\n    \"deviceID\": \"{{deviceID}}\",\r\n    \"actuatorModelPath\": \"smarthome.domain.actuator.set_integer_actuator.SetIntegerActuator\",\r\n    \"actuatorName\": \"actuator1\",\r\n    \"actuatorTypeID\": \"{{actuatorTypeID}}\",\r\n    \"minLimit\": \"1\",\r\n    \"maxLimit\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/actuators"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc11: to get log from device",
+			"item": [
+				{
+					"name": "get log",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/logs?deviceID=123&timeStart=2023-05-10T14:00:00&timeEnd=2023-05-10T14:05:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"logs"
+							],
+							"query": [
+								{
+									"key": "deviceID",
+									"value": "123"
+								},
+								{
+									"key": "timeStart",
+									"value": "2023-05-10T14:00:00"
+								},
+								{
+									"key": "timeEnd",
+									"value": "2023-05-10T14:05:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Actuator Types",
+			"item": [
+				{
+					"name": "Get Actuator Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator-types"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Actuator Models",
+			"item": [
+				{
+					"name": "get model by typeId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var responseData = pm.response.json(); \r",
+									"var actuatorModelPath = responseData._embedded.actuatorModelDTOList[0].actuatorModelPath;  \r",
+									"pm.environment.set(\"actuatorModelPath\", actuatorModelPath);  \r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator-model/{{actuatorTypeID}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Close BlindRoller",
+			"item": [
+				{
+					"name": "Close BlindRoller",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080//{{deviceID}}}/devices/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "uc14: get Actuators by DeviceID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuators?{{deviceID}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuators"
+					],
+					"query": [
+						{
+							"key": "{{deviceID}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
